@@ -88,3 +88,16 @@ Non-functional requirements describe how the system should perform its functions
    - An Apache Streaming service must take data from the messaging queue and store it in Hadoop for Big Data analysis.
    - Big Data analysis must be used for purposes such as business analysis, finding potential customers, and audience categorizations.
 
+# Use Case Diagrams
+
+### What are Use Case Diagrams?
+* Use case diagrams show how different users (actors) interact with the system to achieve specific goals (use cases).
+### Creating Use Case Diagrams:
+* Identify actors (e.g., guest, registered user, admin).
+* Define use cases (e.g., search properties, book property, manage listings).
+* Draw interactions between actors and use cases.
+### Benefits of Use Case Diagrams:
+* Provide a clear visual representation of system functionalities.
+* Help in identifying and organizing system requirements.
+* Facilitate communication among stakeholders and development team.
+
