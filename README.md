@@ -103,3 +103,45 @@ Non-functional requirements describe how the system should perform its functions
 
 ![image alt](https://github.com/OnlineElite/requirement-analysis/blob/main/alx-booking-uc.png?raw=true)
 
+# Acceptance Criteria
+
+Objective: Establishing clear criteria for feature completion.
+
+### What is Acceptance Criteria?
+* Acceptance criteria are conditions that a feature must meet to be accepted by the stakeholders.
+### How to Define Acceptance Criteria:
+* Be specific and measurable.
+* Include functional and non-functional aspects.
+* Example for Booking System: “Users should be able to select available dates, confirm booking, and receive a confirmation email within 2 minutes.”
+### Benefits of Acceptance Criteria:
+* Ensure all parties have a clear understanding of feature requirements.
+* Provide a basis for testing and validation.
+* Help in maintaining quality and meeting user expectations.
+
+### Exemple : Feature: Payment Process and Booking Confirmation
+
+#### Criterion 1: Successful Payment and Booking Confirmation
+   - Given that a customer has selected a hotel, provided the necessary details, and reached the payment page.
+   - When the customer enters valid payment information and the third-party payment service successfully processes the payment.
+   - Then the system must:
+     - Display a clear and detailed booking confirmation message to the customer (This functionality is implicit given the completion of a booking).
+     - Record the booking in the booking database cluster.
+     - Send a notification to the hotel manager regarding the new booking.
+     - Ensure that the API response time for booking confirmation is minimal to guarantee a "smooth flow".
+     - The booking data must be sent to the messaging queue for further processing and archival in Cassandra.
+
+#### Criterion 2: Payment Failure
+   - Given that a customer is on the payment page.
+   - When the customer attempts to finalize the booking, but the third-party payment service returns a payment failure.
+   - Then the system must:
+     - Display a clear and informative error message to the customer, indicating the payment failure.
+     - Not confirm the booking.
+     - Not send a notification to the hotel manager regarding a new booking.
+
+#### Criterion 3: Performance and Resilience of the Payment Page
+   - Given a high amount of users simultaneously accessing the payment page.
+   - When the system processes payment requests.
+   - Then the system must:
+     - Maintain a fast loading time for the payment page, utilizing a "caching system like Redis" to "store temporary data" to "reduce the load on the database", "reduce the API response time", and "reduce the loading time on the app side".
+     - Effectively manage the "high amount of user traffic" by distributing requests via "load balancers" to the appropriate servers.
+     - Ensure continuous availability of the payment service, even under high load.
