@@ -101,3 +101,5 @@ Non-functional requirements describe how the system should perform its functions
 * Help in identifying and organizing system requirements.
 * Facilitate communication among stakeholders and development team.
 
+![image alt](https://github.com/OnlineElite/requirement-analysis/blob/main/alx-booking-uc.png?raw=true)
+
